@@ -25,7 +25,7 @@ void get_quaternion_avg(vector<vector<double> > quat_datas, gsl_vector *quat_avg
    //calc M = sum 1/n*(q*q')
    // qavg = eigen_vec (M) for max eigen val
    gsl_matrix *M = gsl_matrix_calloc(4,4); //start with M =0 matrix
-   gsl_vector *q = gsl_vector_alloc(4);
+   gsl_vector *q = gsl_vector_calloc(4);
  
    int num;
  
@@ -53,7 +53,7 @@ void get_quaternion_avg(vector<vector<double> > quat_datas, gsl_vector *quat_avg
    gsl_eigen_symmv_sort(eval,evec,GSL_EIGEN_SORT_ABS_DESC);
  
    gsl_vector_memcpy(quat_avg,&gsl_matrix_column(evec,0).vector);
-   //  quat_avg = gsl_matrix_column(evec,0).vector;
+   
  
    gsl_vector_free (eval);
    gsl_matrix_free (evec);
