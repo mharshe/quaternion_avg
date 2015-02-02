@@ -12,7 +12,8 @@ Since quaternions are not regular vectors, but rather representations of orienta
 
 This C/C++ code needs the [GNU GSL][gsl] to be installed on the system.
 
-
+### License:
+This code is licensed under GPL.
 
 [gsl]: http://www.gnu.org/software/gsl/
 [paper]: http://dx.doi.org/10.2514/1.28949
